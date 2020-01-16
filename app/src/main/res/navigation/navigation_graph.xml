@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/leaguesFragment">
+
+    <fragment
+        android:id="@+id/leaguesFragment"
+        android:name="com.bip.interview.task.modules.league.views.LeaguesFragment"
+        android:label="Leagues"
+        tools:layout="@layout/fragment_leagues">
+        <action
+            android:id="@+id/action_leaguesFragment_to_teamsFragment"
+            app:destination="@id/teamsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/leaguesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.bip.interview.task.modules.teams.views.TeamsFragment"
+        android:label="League Teams"
+        tools:layout="@layout/fragment_teams">
+        <action
+            android:id="@+id/action_teamsFragment_to_teamInfoFragment"
+            app:destination="@id/teamInfoFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+        <argument
+            android:name="leagueId"
+            app:argType="integer" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/teamInfoFragment"
+        android:name="com.bip.interview.task.modules.teams.views.TeamInfoFragment"
+        android:label="{teamName}"
+        tools:layout="@layout/fragment_team_info">
+        <argument
+            android:name="teamId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="teamName"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

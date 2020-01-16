@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Football Leagues</string>
+    <string name="ok">OK</string>
+    <string name="space"> - </string>
+    <string name="api_error_msg">the free API Token does not support the data of this competition lease choose another competition</string>
+    <string name="player">Squad</string>
+</resources>
